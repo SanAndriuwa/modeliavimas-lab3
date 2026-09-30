@@ -68,3 +68,9 @@ ylabel('I0, microA'); xlabel('Iteration'); grid on;
 subplot(2,1,2); plot(0:size(history,1)-1,history(:,2)*100-273.15,'-o');
 ylabel('Temperature, C'); xlabel('Iteration'); grid on;
 end
+
+% Keep plots readable when MATLAB uses a dark theme.
+set(findall(groot,'Type','figure'),'Color','w');
+set(findall(groot,'Type','axes'),'Color','w','XColor','k','YColor','k');
+set(findall(groot,'Type','legend'),'Color','w','TextColor','k');
+set(findall(groot,'Type','text'),'Color','k');
