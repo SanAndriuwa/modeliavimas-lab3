@@ -1,43 +1,13 @@
 # Modeliavimas-lab3
 
-## Užduotis: netiesinių lygčių sprendimas
+Atnaujinta pagal `Niutono_metodas_uzduotis.pdf` (2026-10-22).
 
-Diodo voltamperinė charakteristika:
+Atidarykite `lab3_main.m` ir paspauskite Run. Šalia turi būti `newtons.m`. Papildomų toolbox nereikia.
 
-$$I = I_0\left(\exp\left(\frac{Ue}{kT}\right)-1\right),$$
+Studento numeris 20194658: `mod(20194658,15)+1 = 9`, todėl sprendžiama `exp(x)-2 = 0`. Tikslus sprendinys yra `log(2) ≈ 0.693147180560`.
 
-kur **k = 1.38·10⁻²³**, **e = 1.602·10⁻¹⁹**, o **T = t + 273.15** kelvinais.
+Skripto pradžioje nustatomi studento numeris, x0, didžiausias iteracijų skaičius N ir tolerancijos tolX, tolY. Yra visos 15 užduoties funkcijų ir jų analitinės išvestinės. Parinktas teigiamas x0=1.
 
-1. Sudarykite MATLAB programą parametrams I0 ir t nustatyti Niutono metodu.
-2. Palyginkite rezultatą su MATLAB `fsolve()`.
-3. Nubraižykite diodo charakteristiką su rastais parametrais.
-
-Patikrinimo reikšmės iš užduoties:
-
-| Kreivė | I0, µA | t, °C |
-|---|---|---|
-| 1, ištisinė | 1 | -10 |
-| 2, brūkšninė | 5 | 30 |
-| 3, brūkšninė-taškinė | 9 | 50 |
-
-Šaltinis: dėstytojo pateiktas `NonLinear.pdf`.
-
-## Pradiniai duomenys
-
-PDF pateiktas tik grafikas, tikslios matavimo lentelės nėra. Skriptas naudoja **apytikriai nuo grafiko nuskaitytus, suapvalintus taškus**:
-
-| Kreivė | I prie U=0.08 V, µA | I prie U=0.12 V, µA |
-|---|---|---|
-| 1 | 33 | 197 |
-| 2 | 102 | 491 |
-| 3 | 151 | 662 |
-
-Todėl nustatyti parametrai yra apytikriai. Turint tikslius matavimo duomenis, pakeiskite `Udata` ir `Igraph`. Užduoties patikrinimo parametrai naudojami tik rezultatui palyginti po sprendimo.
-
-## Paleidimas
-
-Atidarykite [lab3_main.m](lab3_main.m) ir paspauskite **Run**. [newtons.m](newtons.m) turi būti tame pačiame aplanke. Funkcijai `fsolve()` reikalingas **Optimization Toolbox**. Be jo Niutono metodas veikia, o `fsolve()` lentelėje rodoma `NaN` ir pranešama, kad šis palyginimas nebuvo vykdytas.
-
-Pagal nutylėjimą sprendžiamos visos trys kreivės (`variants = 1:3`).
+Programa pateikia paskutinį x įvertį, f(x), iteracijų skaičių, sustojimo priežastį ir funkcijos grafiką su apskaičiuotu tašku.
 
 Paaiškinimas: [SOLUTION.md](SOLUTION.md).
